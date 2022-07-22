@@ -13,6 +13,10 @@
 		1ED24A57288B0DB1004613FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ED24A55288B0DB1004613FC /* Main.storyboard */; };
 		1ED24A59288B0DB6004613FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ED24A58288B0DB6004613FC /* Assets.xcassets */; };
 		1ED24A5C288B0DB6004613FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ED24A5A288B0DB6004613FC /* LaunchScreen.storyboard */; };
+		1ED24A64288B1092004613FC /* Tamagotchi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED24A63288B1092004613FC /* Tamagotchi.swift */; };
+		1ED24A67288B15E4004613FC /* FirstScreenCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED24A66288B15E4004613FC /* FirstScreenCollectionViewController.swift */; };
+		1ED24A69288B1620004613FC /* FirstScreenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED24A68288B1620004613FC /* FirstScreenCollectionViewCell.swift */; };
+		1ED24A6B288B1DAC004613FC /* TamagotchiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED24A6A288B1DAC004613FC /* TamagotchiData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		1ED24A58288B0DB6004613FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1ED24A5B288B0DB6004613FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1ED24A5D288B0DB6004613FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1ED24A63288B1092004613FC /* Tamagotchi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tamagotchi.swift; sourceTree = "<group>"; };
+		1ED24A66288B15E4004613FC /* FirstScreenCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenCollectionViewController.swift; sourceTree = "<group>"; };
+		1ED24A68288B1620004613FC /* FirstScreenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenCollectionViewCell.swift; sourceTree = "<group>"; };
+		1ED24A6A288B1DAC004613FC /* TamagotchiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,27 @@
 		1ED24A4E288B0DB1004613FC /* Tamagotchi_Project */ = {
 			isa = PBXGroup;
 			children = (
+				1ED24A65288B14C7004613FC /* FirstScreen */,
 				1ED24A4F288B0DB1004613FC /* AppDelegate.swift */,
 				1ED24A51288B0DB1004613FC /* SceneDelegate.swift */,
 				1ED24A53288B0DB1004613FC /* ViewController.swift */,
-				1ED24A55288B0DB1004613FC /* Main.storyboard */,
 				1ED24A58288B0DB6004613FC /* Assets.xcassets */,
 				1ED24A5A288B0DB6004613FC /* LaunchScreen.storyboard */,
 				1ED24A5D288B0DB6004613FC /* Info.plist */,
+				1ED24A63288B1092004613FC /* Tamagotchi.swift */,
+				1ED24A6A288B1DAC004613FC /* TamagotchiData.swift */,
 			);
 			path = Tamagotchi_Project;
+			sourceTree = "<group>";
+		};
+		1ED24A65288B14C7004613FC /* FirstScreen */ = {
+			isa = PBXGroup;
+			children = (
+				1ED24A55288B0DB1004613FC /* Main.storyboard */,
+				1ED24A66288B15E4004613FC /* FirstScreenCollectionViewController.swift */,
+				1ED24A68288B1620004613FC /* FirstScreenCollectionViewCell.swift */,
+			);
+			path = FirstScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +158,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ED24A64288B1092004613FC /* Tamagotchi.swift in Sources */,
 				1ED24A54288B0DB1004613FC /* ViewController.swift in Sources */,
 				1ED24A50288B0DB1004613FC /* AppDelegate.swift in Sources */,
+				1ED24A6B288B1DAC004613FC /* TamagotchiData.swift in Sources */,
+				1ED24A67288B15E4004613FC /* FirstScreenCollectionViewController.swift in Sources */,
 				1ED24A52288B0DB1004613FC /* SceneDelegate.swift in Sources */,
+				1ED24A69288B1620004613FC /* FirstScreenCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
