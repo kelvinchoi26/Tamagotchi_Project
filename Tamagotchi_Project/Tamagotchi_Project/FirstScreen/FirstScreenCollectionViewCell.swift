@@ -13,7 +13,7 @@ class FirstScreenCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var tamagotchiName: UILabel!
     
     func configureCell(data: Tamagotchi) {
-        tamagotchiName.font = .boldSystemFont(ofSize: 13)
+        tamagotchiName.font = .boldSystemFont(ofSize: 14)
         tamagotchiName.textColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
         tamagotchiName.layer.borderColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1).cgColor
         tamagotchiName.layer.borderWidth = 1
