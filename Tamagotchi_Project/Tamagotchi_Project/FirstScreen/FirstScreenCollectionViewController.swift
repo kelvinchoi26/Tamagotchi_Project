@@ -70,17 +70,21 @@ class FirstScreenCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.item > 2 {
+        
+        let index = indexPath.item
+        if index > 2 {
             view.makeToast("아직 준비중이에요 ㅠ", duration: 1)
         } else {
             let sb = UIStoryboard.init(name: "PopUp", bundle: nil)
-            let popUpVC = sb.instantiateViewController(withIdentifier: "PopUpViewController")
+            let popUpVC = sb.instantiateViewController(withIdentifier: "PopUpViewController") as! PopUpViewController
             
-            popUpVC.modalPresentationStyle = .overCurrentContext
+            popUpVC.modalPresentationStyle = .fullScreen
             
-            view.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.8)
+            let data = tamagotchiInstance.tamagotchi[index]
             
-            self.present(popUpVC, animated: false, completion: nil)
+            popUpVC.tamagotchiData = data
+            
+            self.present(popUpVC, animated: true, completion: nil)
         }
     }
 
