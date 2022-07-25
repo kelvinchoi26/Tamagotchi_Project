@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E4E934C288E1F5600A23E18 /* TamagotchiLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4E934B288E1F5600A23E18 /* TamagotchiLevel.swift */; };
+		1E4E934F288E895D00A23E18 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E4E934E288E895D00A23E18 /* Setting.storyboard */; };
+		1E4E9351288E898700A23E18 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4E9350288E898700A23E18 /* SettingTableViewController.swift */; };
+		1E4E9353288E8B4E00A23E18 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4E9352288E8B4E00A23E18 /* SettingTableViewCell.swift */; };
+		1E4E9355288EA62300A23E18 /* NameChange.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E4E9354288EA62300A23E18 /* NameChange.storyboard */; };
+		1E4E9357288EA63C00A23E18 /* NameChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4E9356288EA63C00A23E18 /* NameChangeViewController.swift */; };
 		1EB47A4B288C75A70035313E /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 1EB47A4A288C75A70035313E /* Toast */; };
 		1EB47A4E288C79950035313E /* PopUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EB47A4D288C79950035313E /* PopUp.storyboard */; };
 		1EB47A50288C79A90035313E /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB47A4F288C79A90035313E /* PopUpViewController.swift */; };
@@ -25,6 +31,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E4E934B288E1F5600A23E18 /* TamagotchiLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiLevel.swift; sourceTree = "<group>"; };
+		1E4E934E288E895D00A23E18 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		1E4E9350288E898700A23E18 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		1E4E9352288E8B4E00A23E18 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		1E4E9354288EA62300A23E18 /* NameChange.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NameChange.storyboard; sourceTree = "<group>"; };
+		1E4E9356288EA63C00A23E18 /* NameChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameChangeViewController.swift; sourceTree = "<group>"; };
 		1EB47A4D288C79950035313E /* PopUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopUp.storyboard; sourceTree = "<group>"; };
 		1EB47A4F288C79A90035313E /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		1EB47A52288D96E20035313E /* MainScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainScreen.storyboard; sourceTree = "<group>"; };
@@ -55,11 +67,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E4E934D288E895000A23E18 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				1E4E934E288E895D00A23E18 /* Setting.storyboard */,
+				1E4E9350288E898700A23E18 /* SettingTableViewController.swift */,
+				1E4E9352288E8B4E00A23E18 /* SettingTableViewCell.swift */,
+				1E4E9354288EA62300A23E18 /* NameChange.storyboard */,
+				1E4E9356288EA63C00A23E18 /* NameChangeViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		1EB47A4C288C79730035313E /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				1ED24A63288B1092004613FC /* Tamagotchi.swift */,
 				1ED24A6A288B1DAC004613FC /* TamagotchiData.swift */,
+				1E4E934B288E1F5600A23E18 /* TamagotchiLevel.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -92,6 +117,7 @@
 		1ED24A4E288B0DB1004613FC /* Tamagotchi_Project */ = {
 			isa = PBXGroup;
 			children = (
+				1E4E934D288E895000A23E18 /* Setting */,
 				1EB47A51288D942A0035313E /* MainScreen */,
 				1EB47A4C288C79730035313E /* Data */,
 				1ED24A65288B14C7004613FC /* FirstScreen */,
@@ -186,6 +212,8 @@
 				1ED24A59288B0DB6004613FC /* Assets.xcassets in Resources */,
 				1ED24A57288B0DB1004613FC /* Main.storyboard in Resources */,
 				1EB47A4E288C79950035313E /* PopUp.storyboard in Resources */,
+				1E4E9355288EA62300A23E18 /* NameChange.storyboard in Resources */,
+				1E4E934F288E895D00A23E18 /* Setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,7 +230,11 @@
 				1ED24A6B288B1DAC004613FC /* TamagotchiData.swift in Sources */,
 				1ED24A67288B15E4004613FC /* FirstScreenCollectionViewController.swift in Sources */,
 				1ED24A52288B0DB1004613FC /* SceneDelegate.swift in Sources */,
+				1E4E9353288E8B4E00A23E18 /* SettingTableViewCell.swift in Sources */,
+				1E4E9357288EA63C00A23E18 /* NameChangeViewController.swift in Sources */,
 				1ED24A69288B1620004613FC /* FirstScreenCollectionViewCell.swift in Sources */,
+				1E4E9351288E898700A23E18 /* SettingTableViewController.swift in Sources */,
+				1E4E934C288E1F5600A23E18 /* TamagotchiLevel.swift in Sources */,
 				1EB47A50288C79A90035313E /* PopUpViewController.swift in Sources */,
 				1EB47A55288D971A0035313E /* MainScreenViewController.swift in Sources */,
 			);
@@ -280,7 +312,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -334,7 +366,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -354,6 +386,7 @@
 				DEVELOPMENT_TEAM = AFMSUTLF6S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Tamagotchi_Project/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "최형민";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -382,6 +415,7 @@
 				DEVELOPMENT_TEAM = AFMSUTLF6S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Tamagotchi_Project/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "최형민";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

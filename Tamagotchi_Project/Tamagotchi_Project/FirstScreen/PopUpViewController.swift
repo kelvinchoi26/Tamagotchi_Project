@@ -29,9 +29,7 @@ class PopUpViewController: UIViewController {
         view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
         view.isOpaque = false
         
-        tamagotchiName.text = tamagotchiData?.name
-        tamagotchiImage.image = tamagotchiData?.image[0]
-        tamagotchiDetail.text = tamagotchiData?.description
+        tamagotchiImage.image = tamagotchiData?.image[5]
         
         popUpView.layer.borderWidth = 1
         popUpView.layer.borderColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1).cgColor
@@ -44,9 +42,12 @@ class PopUpViewController: UIViewController {
         tamagotchiName.layer.borderColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1).cgColor
         tamagotchiName.layer.borderWidth = 1
         tamagotchiName.layer.cornerRadius = 2
+        tamagotchiName.text = tamagotchiData?.name
         
         tamagotchiDetail.textAlignment = .center
         tamagotchiDetail.font = .systemFont(ofSize: 13)
+        tamagotchiDetail.text = tamagotchiData?.description
+        
         separateLine.backgroundColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
         
         cancelButton.setTitle("취소", for: .normal)
@@ -59,14 +60,19 @@ class PopUpViewController: UIViewController {
         startButton.titleLabel?.font = .systemFont(ofSize: 13)
         startButton.tintColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
     }
+    
     @IBAction func startButtonClicked(_ sender: UIButton) {
         // 1.
         let sb = UIStoryboard(name: "MainScreen", bundle: nil)
         // 2.
         let vc = sb.instantiateViewController(withIdentifier: "MainScreenViewController") as! MainScreenViewController
+        
+        vc.tamagotchiData = tamagotchiData
+        
         // 2.5. (네비게이션 포함 풀스크린)
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen
+        
         // 3.
         self.present(nav, animated: true)
     }

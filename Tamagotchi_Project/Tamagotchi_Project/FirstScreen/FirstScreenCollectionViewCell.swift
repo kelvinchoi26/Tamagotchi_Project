@@ -20,7 +20,6 @@ class FirstScreenCollectionViewCell: UICollectionViewCell {
         tamagotchiName.layer.cornerRadius = 2
         tamagotchiName.text = data.name
 
-        // 우선은 첫 번째 사진 강제로 지정, 나중에는 UserDefaults 값에 따라 조건문 생성
-        tamagotchiImage.image = data.image[0]
+        tamagotchiImage.image = data.image[5]
     }
 }

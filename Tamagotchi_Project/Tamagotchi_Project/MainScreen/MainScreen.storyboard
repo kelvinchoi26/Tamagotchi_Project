@@ -53,6 +53,9 @@
                                         <rect key="frame" x="0.0" y="10" width="178.5" height="40.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="riceReturnClicked:" destination="Y6W-OH-hqX" eventType="editingDidEndOnExit" id="iqx-Di-07c"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HfL-4T-tgU">
                                         <rect key="frame" x="188.5" y="10" width="80.5" height="40.5"/>
@@ -61,17 +64,40 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="riceButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="yUa-uv-Wjd"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="onv-I8-FHX">
                                         <rect key="frame" x="0.0" y="65.5" width="178.5" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="waterReturnClicked:" destination="Y6W-OH-hqX" eventType="editingDidEndOnExit" id="q12-t6-kXr"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsR-ra-gc9">
                                         <rect key="frame" x="188.5" y="65.5" width="80.5" height="40"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="waterButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="brO-7O-Vhj"/>
+                                        </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="790-br-Fdp">
+                                        <rect key="frame" x="0.0" y="50.5" width="178.5" height="1"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="Ory-ds-YRX"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fYv-Zh-wN2">
+                                        <rect key="frame" x="0.0" y="105.5" width="178.5" height="1"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="Okc-Wj-AmG"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -82,8 +108,12 @@
                                     <constraint firstItem="rsR-ra-gc9" firstAttribute="width" secondItem="HfL-4T-tgU" secondAttribute="width" id="Dhz-Xk-VQT"/>
                                     <constraint firstAttribute="trailing" secondItem="HfL-4T-tgU" secondAttribute="trailing" id="GL9-vC-vyW"/>
                                     <constraint firstItem="AXr-Vh-fgg" firstAttribute="height" secondItem="HfL-4T-tgU" secondAttribute="height" id="Kco-fN-2Aj"/>
+                                    <constraint firstItem="790-br-Fdp" firstAttribute="width" secondItem="AXr-Vh-fgg" secondAttribute="width" id="SWd-zc-7at"/>
                                     <constraint firstItem="rsR-ra-gc9" firstAttribute="width" secondItem="rsR-ra-gc9" secondAttribute="height" multiplier="2:1" id="UAT-H3-If8"/>
+                                    <constraint firstItem="fYv-Zh-wN2" firstAttribute="width" secondItem="onv-I8-FHX" secondAttribute="width" id="UK4-Uy-Pb4"/>
                                     <constraint firstItem="HfL-4T-tgU" firstAttribute="leading" secondItem="AXr-Vh-fgg" secondAttribute="trailing" constant="10" id="XAg-cZ-3PO"/>
+                                    <constraint firstItem="790-br-Fdp" firstAttribute="top" secondItem="AXr-Vh-fgg" secondAttribute="bottom" id="ZuK-ZS-RBQ"/>
+                                    <constraint firstItem="fYv-Zh-wN2" firstAttribute="top" secondItem="onv-I8-FHX" secondAttribute="bottom" id="aic-HG-Es2"/>
                                     <constraint firstAttribute="trailing" secondItem="rsR-ra-gc9" secondAttribute="trailing" id="cpx-gY-6ZD"/>
                                     <constraint firstItem="AXr-Vh-fgg" firstAttribute="top" secondItem="r7v-0u-dSG" secondAttribute="top" constant="10" id="gx1-zD-Gag"/>
                                     <constraint firstItem="onv-I8-FHX" firstAttribute="top" secondItem="AXr-Vh-fgg" secondAttribute="bottom" constant="15" id="kE5-2d-WH8"/>
@@ -91,11 +121,14 @@
                                     <constraint firstItem="HfL-4T-tgU" firstAttribute="width" secondItem="r7v-0u-dSG" secondAttribute="width" multiplier="0.3" id="p6l-C5-yof"/>
                                     <constraint firstItem="AXr-Vh-fgg" firstAttribute="leading" secondItem="r7v-0u-dSG" secondAttribute="leading" id="tHE-eI-Omo"/>
                                     <constraint firstItem="rsR-ra-gc9" firstAttribute="top" secondItem="AXr-Vh-fgg" secondAttribute="bottom" constant="15" id="vtL-UT-akD"/>
+                                    <constraint firstItem="fYv-Zh-wN2" firstAttribute="leading" secondItem="r7v-0u-dSG" secondAttribute="leading" id="wRZ-4A-CYq"/>
+                                    <constraint firstItem="790-br-Fdp" firstAttribute="leading" secondItem="r7v-0u-dSG" secondAttribute="leading" id="wfg-i6-dXs"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="6Ud-eV-jCX" firstAttribute="centerY" secondItem="qQS-Jc-j6N" secondAttribute="centerY" id="11L-XJ-qz5"/>
                             <constraint firstItem="5et-kA-v30" firstAttribute="top" secondItem="ICs-XJ-cQg" secondAttribute="bottom" constant="10" id="9ou-dC-ZZE"/>
@@ -114,6 +147,9 @@
                             <constraint firstItem="6Ud-eV-jCX" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.5" id="qDz-Vq-OFi"/>
                             <constraint firstItem="H1v-of-dAF" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="t5B-H4-BZu"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="LHr-8b-zdQ" appends="YES" id="vCf-3a-Tzb"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="bBg-He-Xde"/>
                     <connections>
@@ -129,6 +165,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="LHr-8b-zdQ">
+                    <connections>
+                        <action selector="TapGestureClicked:" destination="Y6W-OH-hqX" id="D0u-50-gn7"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="971.01449275362324" y="115.84821428571428"/>
         </scene>

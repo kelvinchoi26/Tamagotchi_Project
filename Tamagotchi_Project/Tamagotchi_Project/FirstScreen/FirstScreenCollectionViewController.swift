@@ -19,7 +19,14 @@ class FirstScreenCollectionViewController: UICollectionViewController {
         
         configureViewLayout()
         configureCellLayout()
-        
+        setUserDefaults()
+    }
+    
+    func setUserDefaults() {
+        UserDefaults.standard.set("대장", forKey: "userName")
+        UserDefaults.standard.set(0, forKey: "riceCount")
+        UserDefaults.standard.set(0, forKey: "waterCount")
+        UserDefaults.standard.set(1, forKey: "level")
     }
     
     func configureViewLayout() {
@@ -78,7 +85,7 @@ class FirstScreenCollectionViewController: UICollectionViewController {
             let sb = UIStoryboard.init(name: "PopUp", bundle: nil)
             let popUpVC = sb.instantiateViewController(withIdentifier: "PopUpViewController") as! PopUpViewController
             
-            popUpVC.modalPresentationStyle = .fullScreen
+            popUpVC.modalPresentationStyle = .overCurrentContext
             
             let data = tamagotchiInstance.tamagotchi[index]
             
