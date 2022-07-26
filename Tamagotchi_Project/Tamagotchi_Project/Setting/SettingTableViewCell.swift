@@ -13,4 +13,5 @@ class SettingTableViewCell: UITableViewCell {
     @IBOutlet var tableViewTitle: [UILabel]!
     @IBOutlet weak var userNameLabel: UILabel!
     
+    
 }

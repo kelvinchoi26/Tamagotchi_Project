@@ -12,8 +12,12 @@ class MainScreenViewController: UIViewController {
     
     var tamagotchiData: Tamagotchi?
     
-    let message = ["아파도 버티세요! \(UserDefaults.standard.string(forKey: "userName")!)님 ㅠㅠ", "화이팅 얼마 남지 않았습니다 ㅠㅠ", "좋은 곳에 취직하려면 지금보다 백배는 더 열심히 하세요", "지금 잠이 오십니까?", "과제 쉽지 않쥬? ㅠ", "거의 다 왔어요!!", "일부러 이러시는거죠?", "아 배불러요 그만 좀 줘요;;", "배 터지겠습니다."]
+    let message = ["아파도 버티세요! \(UserDefaults.standard.string(forKey: "userName")!)님 ㅠㅠ", "화이팅 얼마 남지 않았습니다 ㅠㅠ", "좋은 곳에 취직하려면 지금보다 백배는 더 열심히 하세요", "지금 잠이 오십니까?", "과제 쉽지 않쥬? ㅠ", "거의 다 왔어요!!", "드디어 두 번째 도전만에 완성.. 아닐수도? ㅠ", "이번엔 리젝 아니겠지??", "이젠 정신차리고 더 이상 실수하지 말자!!"]
+    
+    let fullMessage = ["일부러 이러시는거죠?", "아 배불러요 그만 좀 줘요;;", "배 터지겠습니다.", "끝 끝 끝 그만하라고요", "게임 그만하고 이만 주무세요 ㅡㅡ"]
 
+    @IBOutlet weak var riceWaterView: UIView!
+    
     @IBOutlet weak var messageBoxImage: UIImageView!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var tamagotchiImage: UIImageView!
@@ -29,6 +33,7 @@ class MainScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        updateValue()
         configureNavigation()
         configureMainScreen()
     }
@@ -36,6 +41,7 @@ class MainScreenViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        updateValue()
         configureNavigation()
     }
     
@@ -82,17 +88,16 @@ class MainScreenViewController: UIViewController {
             tamagotchiImage.image = tamagotchiData?.image[level-1]
         }
         
-        riceButton.titleLabel?.text = "밥먹기"
-        waterButton.titleLabel?.text = "물먹기"
-        
-        if UserDefaults.standard.integer(forKey: "level") == 10 {
-            messageLabel.text = message[Int.random(in: 6...8)]
+        if level == 10 {
+            messageLabel.text = fullMessage[Int.random(in: 0...4)]
+        } else {
+            messageLabel.text = message[Int.random(in: 0...8)]
         }
-        messageLabel.text = message[Int.random(in: 0...5)]
     }
     
     func configureNavigation() {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle"), style: .plain, target: self, action: #selector(settingButtonClicked))
+        self.navigationItem.rightBarButtonItem?.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
         self.navigationItem.title = "\(UserDefaults.standard.string(forKey: "userName")!)님의 다마고치"
     }
     
@@ -104,10 +109,13 @@ class MainScreenViewController: UIViewController {
     }
     
     func configureMainScreen() {
+        riceWaterView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
+        view.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
+        
         messageBoxImage.image = UIImage(named: "bubble")
         messageLabel.numberOfLines = 0
         messageLabel.textAlignment = .center
-        messageLabel.font = .systemFont(ofSize: 13)
+        messageLabel.font = .boldSystemFont(ofSize: 14)
         
         if UserDefaults.standard.integer(forKey: "level") == 10 {
             messageLabel.text = message[Int.random(in: 6...8)]
@@ -120,12 +128,13 @@ class MainScreenViewController: UIViewController {
         tamagotchiName.textColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
         tamagotchiName.layer.borderColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1).cgColor
         tamagotchiName.layer.borderWidth = 1
-        tamagotchiName.layer.cornerRadius = 2
+        tamagotchiName.layer.cornerRadius = 5
         tamagotchiName.text = tamagotchiData?.name
         
         tamagotchiInfo.font = .boldSystemFont(ofSize: 14)
         tamagotchiInfo.textColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
-        tamagotchiInfo.text = "LV\(UserDefaults.standard.integer(forKey: "level")) · 밥알 \(UserDefaults.standard.integer(forKey: "riceCount")) · 물방울 \(UserDefaults.standard.integer(forKey: "waterCount"))"
+        updateValue()
+        tamagotchiInfo.text = "LV\(UserDefaults.standard.integer(forKey: "level")) · 밥알 \(UserDefaults.standard.integer(forKey: "riceCount"))개 · 물방울 \(UserDefaults.standard.integer(forKey: "waterCount"))개"
         
         riceTextField.placeholder = "밥주세용"
         riceTextField.textAlignment = .center
@@ -134,19 +143,16 @@ class MainScreenViewController: UIViewController {
         waterTextField.textAlignment = .center
         waterTextField.borderStyle = .none
         
-        riceButton.titleLabel?.text = "밥먹기"
-        riceButton.titleLabel?.font = .boldSystemFont(ofSize: 14)
-        riceButton.titleLabel?.textColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
+        
+        riceButton.setTitleColor(UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1), for: .normal)
         riceButton.layer.borderColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1).cgColor
         riceButton.layer.borderWidth = 1
-        riceButton.layer.cornerRadius = 2
+        riceButton.layer.cornerRadius = 5
         
-        waterButton.titleLabel?.text = "물먹기"
-        waterButton.titleLabel?.font = .boldSystemFont(ofSize: 14)
-        waterButton.titleLabel?.textColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
+        waterButton.setTitleColor(UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1), for: .normal)
         waterButton.layer.borderColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1).cgColor
         waterButton.layer.borderWidth = 1
-        waterButton.layer.cornerRadius = 2
+        waterButton.layer.cornerRadius = 5
     }
 
     @IBAction func riceButtonClicked(_ sender: UIButton) {

@@ -12,7 +12,7 @@
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="PopUpViewController" id="Y6W-OH-hqX" customClass="PopUpViewController" customModule="Tamagotchi_Project" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -52,13 +52,16 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gv-Sv-u1I">
-                                                <rect key="frame" x="118.5" y="159.5" width="41.5" height="20.5"/>
+                                                <rect key="frame" x="118.5" y="159.5" width="41.5" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="25" id="LT9-Xg-9PJ"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L00-0a-6pJ">
-                                                <rect key="frame" x="0.0" y="210" width="278" height="1"/>
+                                                <rect key="frame" x="15" y="214.5" width="248" height="1"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="or0-og-rSV"/>
@@ -67,10 +70,10 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="L00-0a-6pJ" secondAttribute="trailing" id="Lu8-X1-fDZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="L00-0a-6pJ" secondAttribute="trailing" constant="15" id="Lu8-X1-fDZ"/>
                                             <constraint firstItem="UGi-yd-PIT" firstAttribute="centerX" secondItem="E4X-zJ-YSN" secondAttribute="centerX" id="MhH-yT-3hu"/>
                                             <constraint firstItem="L00-0a-6pJ" firstAttribute="top" secondItem="0gv-Sv-u1I" secondAttribute="bottom" constant="30" id="Uzp-UU-bGN"/>
-                                            <constraint firstItem="L00-0a-6pJ" firstAttribute="leading" secondItem="E4X-zJ-YSN" secondAttribute="leading" id="WKU-Mp-hr3"/>
+                                            <constraint firstItem="L00-0a-6pJ" firstAttribute="leading" secondItem="E4X-zJ-YSN" secondAttribute="leading" constant="15" id="WKU-Mp-hr3"/>
                                             <constraint firstItem="0gv-Sv-u1I" firstAttribute="top" secondItem="UGi-yd-PIT" secondAttribute="bottom" constant="10" id="cBA-Yk-Mhq"/>
                                             <constraint firstItem="UGi-yd-PIT" firstAttribute="top" secondItem="E4X-zJ-YSN" secondAttribute="top" constant="10" id="obt-Mo-XOJ"/>
                                             <constraint firstAttribute="width" secondItem="E4X-zJ-YSN" secondAttribute="height" multiplier="1.2:1" id="pPa-cH-INS"/>
@@ -79,7 +82,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEL-Ol-3IR">
-                                        <rect key="frame" x="26.5" y="293" width="278" height="20.5"/>
+                                        <rect key="frame" x="54" y="293" width="223" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -97,7 +100,7 @@
                                     <constraint firstItem="WEL-Ol-3IR" firstAttribute="centerX" secondItem="UAK-mY-SwA" secondAttribute="centerX" id="gD0-jp-pQb"/>
                                     <constraint firstItem="m47-b8-Bsb" firstAttribute="height" secondItem="UAK-mY-SwA" secondAttribute="height" multiplier="0.12" id="lII-pa-34I"/>
                                     <constraint firstItem="m47-b8-Bsb" firstAttribute="leading" secondItem="UAK-mY-SwA" secondAttribute="leading" id="v8E-Bg-CZW"/>
-                                    <constraint firstItem="WEL-Ol-3IR" firstAttribute="width" secondItem="E4X-zJ-YSN" secondAttribute="width" id="zsk-Qy-Jk2"/>
+                                    <constraint firstItem="WEL-Ol-3IR" firstAttribute="width" secondItem="E4X-zJ-YSN" secondAttribute="width" multiplier="0.8" id="zsk-Qy-Jk2"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -118,6 +121,7 @@
                         <outlet property="tamagotchiDetail" destination="WEL-Ol-3IR" id="p3N-Bn-6Vw"/>
                         <outlet property="tamagotchiImage" destination="UGi-yd-PIT" id="wak-t9-bpm"/>
                         <outlet property="tamagotchiName" destination="0gv-Sv-u1I" id="oPL-QR-M7G"/>
+                        <outlet property="tamagotchiView" destination="E4X-zJ-YSN" id="5QA-S2-XJH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

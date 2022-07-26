@@ -23,13 +23,16 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICs-XJ-cQg">
-                                <rect key="frame" x="186" y="561.5" width="42" height="21"/>
+                                <rect key="frame" x="186" y="561.5" width="42" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="PGE-kw-FfP"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5et-kA-v30">
-                                <rect key="frame" x="186" y="592.5" width="42" height="21"/>
+                                <rect key="frame" x="186" y="601.5" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -47,7 +50,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r7v-0u-dSG">
-                                <rect key="frame" x="72.5" y="633.5" width="269" height="145"/>
+                                <rect key="frame" x="72.5" y="642.5" width="269" height="145"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AXr-Vh-fgg">
                                         <rect key="frame" x="0.0" y="10" width="178.5" height="40.5"/>
@@ -62,8 +65,12 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="HfL-4T-tgU" secondAttribute="height" multiplier="2:1" id="GjJ-QT-Tdt"/>
                                         </constraints>
+                                        <color key="tintColor" red="0.30196078431372547" green="0.41568627450980389" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="drop.circle" catalog="system" title="밥먹기" imagePadding="1">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
+                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="-5" bottom="0.0" trailing="1"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="riceButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="yUa-uv-Wjd"/>
                                         </connections>
@@ -78,22 +85,26 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsR-ra-gc9">
                                         <rect key="frame" x="188.5" y="65.5" width="80.5" height="40"/>
+                                        <color key="tintColor" red="0.30196078430000001" green="0.41568627450000001" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="leaf.circle" catalog="system" title="물먹기" imagePadding="1">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
+                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="-6" bottom="0.0" trailing="0.0"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="waterButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="brO-7O-Vhj"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="790-br-Fdp">
                                         <rect key="frame" x="0.0" y="50.5" width="178.5" height="1"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="labelColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="Ory-ds-YRX"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fYv-Zh-wN2">
                                         <rect key="frame" x="0.0" y="105.5" width="178.5" height="1"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="labelColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="Okc-Wj-AmG"/>
                                         </constraints>
@@ -131,7 +142,7 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="6Ud-eV-jCX" firstAttribute="centerY" secondItem="qQS-Jc-j6N" secondAttribute="centerY" id="11L-XJ-qz5"/>
-                            <constraint firstItem="5et-kA-v30" firstAttribute="top" secondItem="ICs-XJ-cQg" secondAttribute="bottom" constant="10" id="9ou-dC-ZZE"/>
+                            <constraint firstItem="5et-kA-v30" firstAttribute="top" secondItem="ICs-XJ-cQg" secondAttribute="bottom" constant="15" id="9ou-dC-ZZE"/>
                             <constraint firstItem="ICs-XJ-cQg" firstAttribute="top" secondItem="H1v-of-dAF" secondAttribute="bottom" constant="10" id="Dob-FT-dws"/>
                             <constraint firstItem="H1v-of-dAF" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.5" id="HGa-Ll-Bvq"/>
                             <constraint firstItem="ICs-XJ-cQg" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Hjq-qE-k6w"/>
@@ -157,6 +168,7 @@
                         <outlet property="messageLabel" destination="6Ud-eV-jCX" id="mys-rL-Vmg"/>
                         <outlet property="riceButton" destination="HfL-4T-tgU" id="Dcw-jN-n6Y"/>
                         <outlet property="riceTextField" destination="AXr-Vh-fgg" id="bKY-01-nP1"/>
+                        <outlet property="riceWaterView" destination="r7v-0u-dSG" id="ogQ-52-arb"/>
                         <outlet property="tamagotchiImage" destination="H1v-of-dAF" id="ZfS-VM-2y7"/>
                         <outlet property="tamagotchiInfo" destination="5et-kA-v30" id="X4R-kr-QF0"/>
                         <outlet property="tamagotchiName" destination="ICs-XJ-cQg" id="Uk6-qk-cZ7"/>
@@ -193,6 +205,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="drop.circle" catalog="system" width="128" height="121"/>
+        <image name="leaf.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

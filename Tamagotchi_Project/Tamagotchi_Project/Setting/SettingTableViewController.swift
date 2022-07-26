@@ -9,21 +9,23 @@ import UIKit
 
 class SettingTableViewController: UITableViewController {
     
-    @IBOutlet var settingTableView: UITableView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureNavigation()
+        view.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        tableView.reloadData()
     }
     
     func configureNavigation() {
         self.navigationItem.title = "설정"
-        self.navigationItem.leftBarButtonItem?.title = ""
+        self.navigationController?.navigationBar.topItem?.title = ""
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,6 +35,8 @@ class SettingTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SettingTableViewCell", for: indexPath) as! SettingTableViewCell
         let index = indexPath.row
+        
+        cell.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
         
         switch index {
         case 0:
@@ -44,7 +48,7 @@ class SettingTableViewController: UITableViewController {
             cell.tableViewTitle[0].text = "다마고치 변경하기"
             cell.userNameLabel.text = ""
         case 2:
-            cell.tableViewImage[0].image = UIImage(systemName: "goforward")
+            cell.tableViewImage[0].image = UIImage(systemName: "arrow.clockwise")
             cell.tableViewTitle[0].text = "데이터 초기화"
             cell.userNameLabel.text = ""
         default:
@@ -66,7 +70,7 @@ class SettingTableViewController: UITableViewController {
             let sb = UIStoryboard(name: "Main", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "FirstScreenCollectionViewController") as! FirstScreenCollectionViewController
             
-            vc.navigationItem.title = "다마고치 변경하기"
+            UserDefaults.standard.set(true, forKey: "ChangeTamagotchi")
             
             self.navigationController?.pushViewController(vc, animated: true)
         } else {
@@ -88,10 +92,11 @@ class SettingTableViewController: UITableViewController {
         UserDefaults.standard.set(0, forKey: "riceCount")
         UserDefaults.standard.set(0, forKey: "waterCount")
         
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "FirstScreenCollectionViewController") as! FirstScreenCollectionViewController
-        
-        self.navigationController?.pushViewController(vc, animated: true)
+//        let sb = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = sb.instantiateViewController(withIdentifier: "FirstScreenCollectionViewController") as! FirstScreenCollectionViewController
+//
+//        self.navigationController?.pushViewController(vc, animated: true)
+        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
 
 }

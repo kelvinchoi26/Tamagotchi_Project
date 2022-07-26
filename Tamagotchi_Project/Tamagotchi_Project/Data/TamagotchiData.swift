@@ -13,8 +13,8 @@ let imageArray = [[UIImage(named: "1-1"), UIImage(named: "1-2"), UIImage(named: 
 struct TamagotchiData {
     
     let tamagotchi: [Tamagotchi] = [
-        Tamagotchi(name: "따끔따끔 다마고치", description: "저는 따끔따끔 다마고치인데 저 건들지 마세요 예민해지면 가시로 지를 수도 있으니까.", image: imageArray[0]),
-        Tamagotchi(name: "방실방실 다마고치", description: "나는 방실방실 다마고치. 운동? 그게 뭐지, 난 오직 먹기만 해. 그럼 이만 밥 먹으러 갈게.", image: imageArray[1]),
-        Tamagotchi(name: "반짝반짝 다마고치", description: "나는 반짝반짝 다마고치야>< 다른 둘에 비해 이쁘고 빛나지. 그럼 오늘도 화이팅해!!", image: imageArray[2])
+        Tamagotchi(name: "  따끔따끔 다마고치  ", description: "저는 따끔따끔 다마고치인데 저 건들지 마세요 예민해지면 가시로 지를 수도 있으니까.", image: imageArray[0]),
+        Tamagotchi(name: "  방실방실 다마고치  ", description: "나는 방실방실 다마고치. 운동? 그게 뭐지, 난 오직 먹기만 해. 그럼 이만 밥 먹으러 갈게.", image: imageArray[1]),
+        Tamagotchi(name: "  반짝반짝 다마고치  ", description: "나는 반짝반짝 다마고치야>< 다른 둘에 비해 이쁘고 빛나지. 그럼 오늘도 화이팅해!!", image: imageArray[2])
     ]
 }

@@ -17,7 +17,7 @@ class FirstScreenCollectionViewCell: UICollectionViewCell {
         tamagotchiName.textColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
         tamagotchiName.layer.borderColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1).cgColor
         tamagotchiName.layer.borderWidth = 1
-        tamagotchiName.layer.cornerRadius = 2
+        tamagotchiName.layer.cornerRadius = 5
         tamagotchiName.text = data.name
 
         tamagotchiImage.image = data.image[5]

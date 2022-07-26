@@ -19,7 +19,11 @@ class FirstScreenCollectionViewController: UICollectionViewController {
         
         configureViewLayout()
         configureCellLayout()
-        setUserDefaults()
+        
+//        if !UserDefaults.standard.bool(forKey: "ChangeTamagotchi") {
+//            setUserDefaults()
+//
+//        }
     }
     
     func setUserDefaults() {
@@ -27,11 +31,17 @@ class FirstScreenCollectionViewController: UICollectionViewController {
         UserDefaults.standard.set(0, forKey: "riceCount")
         UserDefaults.standard.set(0, forKey: "waterCount")
         UserDefaults.standard.set(1, forKey: "level")
+        UserDefaults.standard.set(false, forKey: "ChangeTamagotchi")
     }
     
     func configureViewLayout() {
         view.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
-        self.navigationItem.title = "다마고치 선택하기"
+        
+        if UserDefaults.standard.bool(forKey: "ChangeTamagotchi") {
+            self.navigationItem.title = "다마고치 변경하기"
+        } else {
+            self.navigationItem.title = "다마고치 선택하기"
+        }
     }
     
     func configureCellLayout() {
@@ -63,12 +73,13 @@ class FirstScreenCollectionViewController: UICollectionViewController {
             let data = tamagotchiInstance.tamagotchi[indexPath.item]
             cell.configureCell(data: data)
         } else {
+            
             cell.tamagotchiName.font = .boldSystemFont(ofSize: 14)
             cell.tamagotchiName.textColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
             cell.tamagotchiName.layer.borderColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1).cgColor
             cell.tamagotchiName.layer.borderWidth = 1
-            cell.tamagotchiName.layer.cornerRadius = 2
-            cell.tamagotchiName.text = "준비중이에요"
+            cell.tamagotchiName.layer.cornerRadius = 5
+            cell.tamagotchiName.text = "  준비중이에요  "
             
             cell.tamagotchiImage.image = UIImage(named: "noImage")
         }
