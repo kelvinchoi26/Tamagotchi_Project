@@ -1,29 +1,32 @@
-# Tamagotchi_Project
+# 다마고치 앱
+- [프로젝트 노션 링크](https://organized-elderberry-847.notion.site/bfa6b9d79e2f4d8a9767b27775fb3cf2)
+- 진행 기간: 2022/07/22 → 2022/07/27
+- 프로젝트 인원: 개인 프로젝트
+- 한 줄 소개: 밥알과 물방울을 먹으며 자라는 다마고치를 키우는 앱
 
-### 7/23 진행상황
-- 화면 컬렉션 뷰, 네이게이션 바 구현
-- 다마고치 데이터 전달 구현
-- 다마고치 구조체 생성
-- 해결 필요: 이미지 전달 구현, label의 테두리 디자인 개선 필요
+## 🛠️ 사용 기술 및 라이브러리
 
-### 7/24 진행상황
-- 준비중이에요 다마고치 클릭했을 때 toast 띄우기 구현
-- 위 3개 다마고치 클릭했을 때 모달 화면 띄우기 구현 (뒤 화면의 투명도 조절 필요)
+- Swift, iOS, UIKit, AutoLayout, Storyboard
+- CollectionView, UserDefaults, Toast, LifeCycle
 
-### 7/25 진행상황
-- 팝업화면에 데이터 전달 구현
-- 메인화면 레이아웃 구현
-- userdefaults 이용한 데이터 저장 구현, 마지막 화면 구현 필요
+## 👾 개발 사항
 
-### 7/26 진행상황
-- 설정화면, 화면 push/pop 구현 완료
-- userdefaults를 이용한 메인화면 동작 구현 완료
-- 생명주기를 고려한 값전달 부분 구현 부족
-- UI 놓친 부분이 많고, 뒷배경 투명하게 만드는 것도 구현 필요
+- UserDefaults를 활용하여 다마고치 데이터 관리
+    - 다마고치 레벨, 밥알/물방울 개수, 유저이름 관리
+    - 레벨이 오를 수록 레벨에 맞는 다마고치 모습으로 변화
+- **Storyboard**로 **Autolayout** 구현
+- **LifeCycle** 고려하여 구현
+    - 다마고치 키우기 화면에서 **viewWillAppear**마다 사용자에게 보이는 팝업 메시지가 랜덤으로 변경
+- **사용자 경험**을 고려하여 구현
+    - 한 번에 밥알은 최대 99개, 물방울은 최대 49까지 먹을 수 있게 구현
+    - 초과하는 경우 Toast를 통해 사용자에게 알림
 
-### 7/27 진행상황
-- 전체적인 UI수정 (네비게이션 컬러, 버튼 타이틀 등), 백그라운드 컬러는 이후부터 구조체 활용 필요
-- UserDefaults 이용한 값 전달 오류 수정
-- 생명주기 고려한 화면 수정 (ex. viewWillAppear)
-- 초기화 누를 때 첫 화면으로 dismiss 되는 기능 구현
-- 테이블 뷰의 reloadData() 이용해서 데이터 갱신
+| <center>다마고치 선택 화면</center> | <center>다마고치 선택 후 시작</center> | <center>다마고치 키우기 화면</center>
+|---|---|---|
+| ![b1](https://user-images.githubusercontent.com/70970222/217821242-15813409-e43a-40b5-b97a-a2cfd6c9429a.png) | ![b2](https://user-images.githubusercontent.com/70970222/217821238-2ed83c71-4bd3-4589-8b30-a3f3f4740595.png) | ![b3](https://user-images.githubusercontent.com/70970222/217821236-5f6d6e9a-c426-4804-8726-94b36a1b443c.png)
+
+| <center>밥과 물을 먹여 다마고치 키우기</center> | <center>설정 화면</center> | <center>다마고치 변경하기 화면</center>
+|---|---|---|
+| ![b4](https://user-images.githubusercontent.com/70970222/217821231-428dc9b5-7888-4502-b3ca-9db5a586b179.png) | ![b5](https://user-images.githubusercontent.com/70970222/217821225-1452aa76-4195-4437-9008-8d03a3f568a0.png) | ![b6](https://user-images.githubusercontent.com/70970222/217821218-505ca355-8083-4098-a7b0-21e13c0f87cd.png)
+
+
