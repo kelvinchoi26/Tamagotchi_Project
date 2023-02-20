@@ -4,10 +4,14 @@
 - 프로젝트 인원: 개인 프로젝트
 - 한 줄 소개: 밥알과 물방울을 먹으며 자라는 다마고치를 키우는 앱
 
+***
+
 ## 🛠️ 사용 기술 및 라이브러리
 
 - Swift, iOS, UIKit, AutoLayout, Storyboard
 - CollectionView, UserDefaults, Toast, LifeCycle
+
+***
 
 ## 👾 개발 사항
 
@@ -28,5 +32,42 @@
 | <center>밥과 물을 먹여 다마고치 키우기</center> | <center>설정 화면</center> | <center>다마고치 변경하기 화면</center>
 |---|---|---|
 | ![b4](https://user-images.githubusercontent.com/70970222/217821231-428dc9b5-7888-4502-b3ca-9db5a586b179.png) | ![b5](https://user-images.githubusercontent.com/70970222/217821225-1452aa76-4195-4437-9008-8d03a3f568a0.png) | ![b6](https://user-images.githubusercontent.com/70970222/217821218-505ca355-8083-4098-a7b0-21e13c0f87cd.png)
+
+***
+
+## 회고 / 트러블 슈팅
+
+### 💌 사용자 경험을 고려하여 개발
+
+- 밥알과 물방울 개수에 제한을 설정해 알맞지 않은 값 입력 시 Toast 띄움
+- textfield에 아무 값이 입력되지 않아도 버튼 클릭 시 해당 개수 1 오르게 구현
+
+### 🎓 LifeCycle에 대한 이해
+
+- ViewWillAppear를 활용해 다른 뷰로 이동했다가 돌아오는 경우에도 네비게이션 바의 타이틀과 Label의 텍스트를 업데이트
+- ViewDidLoad과 ViewWillAppear의 차이점에 대해 경험
+    - ViewDidLoad: 화면 처음 만들어질 때 한 번만 실행
+    - ViewWillAppear: 이후에도 화면 로드될 때마다 실행
+
+***
+
+## **📊 앱 기능 설명**
+
+**[다마고치 선택 화면]**
+
+- 마음에 드는 다마고치 클릭 후 설명을 확인한 다음 선택하기
+
+**[다마고치 상세 화면]**
+
+- 밥알과 물방울을 먹여 다마고치를 키우기
+- 우측 상단의 버튼 클릭 시 설정화면으로 이동
+
+**[설정 화면]**
+
+- 이름 변경하기, 다마고치 변경하기, 데이터 초기화 (이름, 레벨, 밥알/물방울 개수)
+
+**[다마고치 변경 화면]**
+
+- 선택한 다마고치를 변경하기 (이름, 레벨, 밥알/물방울 개수 유지됨)
 
 
